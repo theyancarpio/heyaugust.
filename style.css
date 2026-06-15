@@ -1,0 +1,465 @@
+/* ===========================
+   YAN CREATIVE — PORTFOLIO CSS
+   =========================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #F0EDE6;
+}
+
+/* ── NAV ── */
+.wrap {
+  min-height: 100vh;
+  padding: 1.5rem;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 960px;
+  margin: 0 auto 1.25rem;
+}
+
+.nav-logo {
+  font-size: 18px;
+  font-weight: 800;
+  color: #1a1a1a;
+  letter-spacing: -0.5px;
+}
+
+.nav-logo span {
+  color: #E85D4A;
+}
+
+.nav-btn {
+  background: #1a1a1a;
+  color: white;
+  border: none;
+  border-radius: 100px;
+  padding: 9px 22px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* ── GRID ── */
+.grid {
+  display: grid;
+  max-width: 960px;
+  margin: 0 auto;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 14px;
+}
+
+/* ── SLOW HOVER WIGGLE ANIMATION ── */
+@keyframes slow-wiggle {
+  0%   { transform: rotate(0deg) scale(1); }
+  15%  { transform: rotate(-1deg) scale(1.02); }
+  30%  { transform: rotate(1deg) scale(1.02); }
+  45%  { transform: rotate(-0.7deg) scale(1.02); }
+  60%  { transform: rotate(0.7deg) scale(1.02); }
+  75%  { transform: rotate(-0.4deg) scale(1.015); }
+  90%  { transform: rotate(0.4deg) scale(1.015); }
+  100% { transform: rotate(0deg) scale(1.015); }
+}
+
+/* ── BASE CARD ── */
+.card {
+  border-radius: 22px;
+  padding: 1.6rem;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+  transition: box-shadow 0.6s ease;
+}
+
+.card:hover {
+  animation: slow-wiggle 1.4s ease-in-out forwards;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.13);
+}
+
+/* ── HERO — purple ── */
+.c-hero {
+  grid-column: span 7;
+  background: #C4B0F5;
+  min-height: 210px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.c-hero .tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.35);
+  color: #3D1F8A;
+  border-radius: 100px;
+  padding: 4px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.c-hero h1 {
+  font-size: 42px;
+  font-weight: 800;
+  color: #1a0050;
+  line-height: 1.05;
+  letter-spacing: -1px;
+}
+
+.c-hero p {
+  font-size: 13px;
+  color: #3D1F8A;
+  line-height: 1.6;
+  max-width: 300px;
+}
+
+/* ── AVATAR — blue ── */
+.c-avatar {
+  grid-column: span 5;
+  background: #C0D6E1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 210px;
+  padding: 1.2rem;
+}
+
+.polaroid-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tape {
+  width: 54px;
+  height: 18px;
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 3px;
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-1deg);
+  z-index: 2;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.polaroid {
+  background: white;
+  padding: 10px 10px 34px;
+  transform: rotate(-2.5deg);
+  box-shadow: 3px 6px 18px rgba(0, 0, 0, 0.22);
+  width: 148px;
+  position: relative;
+  z-index: 1;
+}
+
+.polaroid img {
+  width: 128px;
+  height: 128px;
+  object-fit: cover;
+  display: block;
+  background: #FCE4EC;
+}
+
+.polaroid-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: #004AAD;
+  text-align: center;
+  margin-top: 8px;
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+
+/* ── ABOUT — yellow ── */
+.c-about {
+  grid-column: span 5;
+  background: #FEF2BD;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.c-about .label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #7A5800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.c-about h2 {
+  font-size: 26px;
+  font-weight: 800;
+  color: #3E2800;
+  line-height: 1.2;
+}
+
+.c-about p {
+  font-size: 13px;
+  color: #5A3D00;
+  line-height: 1.65;
+}
+
+/* ── STATUS — dark ── */
+.c-status {
+  grid-column: span 3;
+  background: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 200px;
+}
+
+.status-dot-wrap {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  color: #aaa;
+  font-weight: 500;
+}
+
+.dot-green {
+  width: 8px;
+  height: 8px;
+  background: #4CAF50;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.c-status h3 {
+  font-size: 20px;
+  font-weight: 800;
+  color: white;
+  line-height: 1.2;
+}
+
+.c-status p {
+  font-size: 12px;
+  color: #888;
+  line-height: 1.5;
+}
+
+.status-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.status-tag {
+  background: #333;
+  color: #ccc;
+  border-radius: 100px;
+  padding: 4px 12px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* ── WORKS — teal ── */
+.c-works {
+  grid-column: span 4;
+  background: #4DB6AC;
+  min-height: 200px;
+}
+
+.c-works h2 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #003D38;
+  margin-bottom: 1rem;
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.work-pill {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #003D38;
+}
+
+.work-pill i {
+  font-size: 16px;
+}
+
+/* ── SERVICES — orange ── */
+.c-services {
+  grid-column: span 5;
+  background: #FF8A65;
+  min-height: 210px;
+}
+
+.c-services h2 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #3E0D00;
+  margin-bottom: 1rem;
+}
+
+.svc-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.22);
+  border-radius: 12px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+}
+
+.svc-item i {
+  font-size: 18px;
+  color: #3E0D00;
+}
+
+.svc-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #3E0D00;
+}
+
+.svc-sub {
+  font-size: 11px;
+  color: #7A3010;
+  margin-top: 1px;
+}
+
+/* ── CV — lime ── */
+.c-cv {
+  grid-column: span 3;
+  background: #C5E1A5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  cursor: pointer;
+  min-height: 210px;
+  border: 2.5px dashed #558B2F;
+  transition: background 0.2s;
+}
+
+.c-cv:hover {
+  background: #B9D99A;
+}
+
+.c-cv i {
+  font-size: 40px;
+  color: #33691E;
+}
+
+.c-cv h3 {
+  font-size: 16px;
+  font-weight: 800;
+  color: #1B4F00;
+}
+
+.c-cv p {
+  font-size: 12px;
+  color: #4E7A2A;
+}
+
+/* ── CONTACT — blue ── */
+.c-contact {
+  grid-column: span 7;
+  background: #42A5F5;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.c-contact h2 {
+  font-size: 30px;
+  font-weight: 800;
+  color: #0A2744;
+  line-height: 1.1;
+}
+
+.c-contact p {
+  font-size: 13px;
+  color: #0D3A66;
+}
+
+.contact-btns {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.cbtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #0A2744;
+  border-radius: 100px;
+  padding: 7px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: 'DM Sans', sans-serif;
+  transition: background 0.2s;
+}
+
+.cbtn:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* ── SKILLS TAGS — coral ── */
+.c-tags {
+  grid-column: span 5;
+  background: #EF9A9A;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 160px;
+}
+
+.c-tags h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #4A0000;
+}
+
+.tags-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 10px;
+}
+
+.tag-pill {
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 100px;
+  padding: 5px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #4A0000;
+}
